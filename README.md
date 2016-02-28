@@ -1,52 +1,74 @@
-Qordoba SDK
-=================
-Qordoba’s Java SDK offers platform-specific features that make the Qordoba implementation much simpler. The SDKs are open-source, and can be forked at the links below. Once forked, you can integrate our API into your application.
+---
+title: AngularJS SDK for l10n
+layout: api
+---
 
-How To Configure:
-=================
-The code might need to be configured with your API credentials. To do that,
-open the file "Configuration.js" and edit it's contents.
+# AngularJS SDK
 
-How To Build: 
-=============
-The code relies on AngularJS framework being available . 
+Qordoba’s AngularJS SDK offers platform-specific features that make the Qordoba API implementation much simpler. The SDK allows you to integrate our API with your application without worrying about low-level API details. Our AngularJS SDK is open-source and can be forked at the link below. Once forked and configured, you will be able to easily integrate our API into your application.
 
-How To Use:
-===========
-The following shows how import the controllers and use:
+### Get the SDK:
 
-1) Add the folder 'QordobaLib' into your to your scripts folder e.g scripts.
+Download the AngularJS API SDK from [GitHub](https://github.com/Qordobacode/api-sdk-angularjs).
+
+To clone the repo: `git clone git@github.com:Qordobacode/api-sdk-angularjs.git`.
+
+### How to configure the SDK:
+
+The SDK reads configuration values from the `Configuration.js` file, which must contain the following configuration entries:
+
+`basicAuthPassword`: Your Qordoba password to use with basic authentication
+
+`basicAuthUserName`: Your Qordoba username to use with basic authentication
+
+
+### How to install:
+
+* After downloading the SDK, add the folder `QordobaLib` into your scripts folder
    
-2) Import the reference to these files inside the appropriate html file such as index.html. 
-   The configuration.js file should be imported before the other files.
+* Import the references for these files from within the appropriate HTML file for your application, such as `index.html`. The `configuration.js` file should be imported before the other files:
 
-
+```javascript
     <!-- Helper files -->
-    <script src="scripts/QordobaLib/Configuration.js"></script>
-    <script src="scripts/QordobaLib/APIHelper.js"></script>
-    <script src="scripts/QordobaLib/Http/Client/HttpContext.js"></script>
-    <script src="scripts/QordobaLib/Http/Client/RequestClient.js"></script>
-    <script src="scripts/QordobaLib/Http/Request/HttpRequest.js"></script>
-    <script src="scripts/QordobaLib/Http/Response/HttpResponse.js"></script>
+   <script src="scripts/QordobaLib/Configuration.js"></script>
+   <script src="scripts/QordobaLib/APIHelper.js"></script>
+   <script src="scripts/QordobaLib/Http/Client/HttpContext.js"></script>
+   <script src="scripts/QordobaLib/Http/Client/RequestClient.js"></script>
+   <script src="scripts/QordobaLib/Http/Request/HttpRequest.js"></script>
+   <script src="scripts/QordobaLib/Http/Response/HttpResponse.js"></script>
 
-    <!-- API Controllers -->
-    <script src="scripts/QordobaLib/Controllers/QordobaController.js"></script>
+   <!-- API Controllers -->
+   <script src="scripts/QordobaLib/Controllers/QordobaController.js"></script>
 
-    <!-- Models -->
-    <script src="scripts/QordobaLib/Models/BaseModel.js"></script>
-    <script src="scripts/QordobaLib/Models/Project.js"></script>
-    <script src="scripts/QordobaLib/Models/MilestoneLanguage.js"></script>
-    <script src="scripts/QordobaLib/Models/Milestone.js"></script>
-    <script src="scripts/QordobaLib/Models/Language.js"></script>
-    <script src="scripts/QordobaLib/Models/User.js"></script>
-    <script src="scripts/QordobaLib/Models/StringFile.js"></script>
+   <!-- Models -->
+   <script src="scripts/QordobaLib/Models/BaseModel.js"></script>
+   <script src="scripts/QordobaLib/Models/Project.js"></script>
+   <script src="scripts/QordobaLib/Models/MilestoneLanguage.js"></script>
+   <script src="scripts/QordobaLib/Models/Milestone.js"></script>
+   <script src="scripts/QordobaLib/Models/Language.js"></script>
+   <script src="scripts/QordobaLib/Models/User.js"></script>
+   <script src="scripts/QordobaLib/Models/StringFile.js"></script>
+```
 
-3) Inject the module into your main module e.g:
+* Inject the module into your main module:
 
-    var myApp = angular.module('myApp', ['QordobaLib'])
+```javascript
+	var myApp = angular.module('myApp', ['QordobaLib'])
+```
 
-4) To use a  factory in your controller, injection could be as follows : 
+* To use a factory in your controller, the injection could be written as follows: 
  
-    myApp.controller('PageCtrl',function($scope,QordobaController) {
+```javascript
+	myApp.controller('PageCtrl',function($scope,QordobaController) {
 
-    }
+	}
+```
+
+
+
+### Bug reports
+Have a bug? Please create an issue [here](https://github.com/Qordobacode/api-sdk-angularjs/issues) on GitHub! 
+
+
+### License
+The MIT License (MIT)
