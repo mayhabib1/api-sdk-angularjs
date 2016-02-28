@@ -7,7 +7,7 @@
 'use strict';
 angular.module('QordobaLib',[]).factory('Configuration', function() {
     return {
-        //The base Uri for API calls
+        //The base URL for API calls
         BASEURI : "https://developers.qordoba.com",
 
         //The username to use with basic authentication
